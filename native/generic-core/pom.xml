@@ -5,70 +5,25 @@
 
     <parent>
         <groupId>net.zscript.testing</groupId>
-        <artifactId>cmake-tryout</artifactId>
+        <artifactId>native</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>native</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>generic-core</artifactId>
+    <packaging>jar</packaging>
 
-    <name>Native Part</name>
+    <name>Generic Core</name>
 
     <properties>
         <version.cmake>3.30.2-b1</version.cmake>
     </properties>
 
-    <modules>
-        <module>generic-core</module>
-    </modules>
-
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>com.googlecode.cmake-maven-project</groupId>
-                    <artifactId>cmake-maven-plugin</artifactId>
-                    <version>${version.cmake}</version>
-                    <configuration>
-                        <downloadBinaries>false</downloadBinaries>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>cmake-generate</id>
-                            <phase>process-resources</phase>
-                            <goals>
-                                <goal>generate</goal>
-                            </goals>
-                            <configuration>
-                                <sourcePath>${project.basedir}</sourcePath>
-                                <targetPath>${project.build.directory}/cmake</targetPath>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>cmake-compile</id>
-                            <phase>process-resources</phase>
-                            <goals>
-                                <goal>compile</goal>
-                            </goals>
-                            <configuration>
-                                <projectDirectory>${project.build.directory}/cmake</projectDirectory>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>cmake-test</id>
-                            <goals>
-                                <goal>test</goal>
-                            </goals>
-                            <configuration>
-                                <buildDirectory>${project.build.directory}/cmake</buildDirectory>
-                                <ignoreTestFailure>false</ignoreTestFailure>
-                                <ctest.skip.tests>false</ctest.skip.tests>
-                                <threadCount>2</threadCount>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.googlecode.cmake-maven-project</groupId>
+                <artifactId>cmake-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
     <!--            <plugin>-->
     <!--                <groupId>org.codehaus.mojo</groupId>-->
