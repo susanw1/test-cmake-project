@@ -1,0 +1,8 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/zscript-generic-coreTargets.cmake")
+
+# If it has any extra configuration variables, set them here
+#set(PROJ1_INCLUDE_DIR "@CMAKE_INSTALL_FULL_INCLUDEDIR@")
+
+check_required_components(zscript-generic-core)
