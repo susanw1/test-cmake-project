@@ -6,5 +6,5 @@ target_include_directories(ZscriptCore INTERFACE
 )
 
 target_sources(ZscriptCore INTERFACE
-    FILE_SET HEADERS BASE_DIRS zscript
+    FILE_SET HEADERS FILES zscript
 )
