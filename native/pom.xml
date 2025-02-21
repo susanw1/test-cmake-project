@@ -15,7 +15,6 @@
 
     <properties>
         <version.cmake>3.30.2-b1</version.cmake>
-        <!--        <clean.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</clean.version>-->
     </properties>
 
     <modules>
@@ -44,6 +43,9 @@
                                 <targetPath>${project.build.directory}/cmake</targetPath>
                                 <options>
                                     <option>-DZSCRIPT_CORE_VERSION=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</option>
+                                    <option>-DZSCRIPT_CORE_MAINTAINER=${zscript.maintainer.email}</option>
+                                    <option>-DZSCRIPT_CORE_DESCRIPTION=${project.description}</option>
+                                    <option>-DZSCRIPT_CORE_LICENSE=${zscript.license.name}</option>
                                 </options>
                             </configuration>
                         </execution>

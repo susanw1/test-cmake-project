@@ -13,6 +13,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
         <version.maven-enforcer-plugin>3.5.0</version.maven-enforcer-plugin>
+
+        <zscript.maintainer.email>susanwitts1+zscript@gmail.com</zscript.maintainer.email>
+        <zscript.license.name>MIT</zscript.license.name>
     </properties>
 
     <modules>
@@ -51,4 +54,34 @@
             </plugin>
         </plugins>
     </build>
+
+    <description>Experiment in building Maven/CMake multiproject deployable builds.</description>
+    <url>https://github.com/susanw1/test-proj</url>
+    <inceptionYear>2025</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>${zscript.license.name}</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <comments>Zscript itself, except for implementation components where specifically indicated</comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>susanw1</id>
+            <name>Susan Witts</name>
+            <url>https://www.linkedin.com/in/susan-witts/</url>
+            <timezone>Europe/London</timezone>
+            <email>${zscript.maintainer.email}</email>
+            <organization>Zscript Team</organization>
+        </developer>
+        <developer>
+            <id>More-Wrong</id>
+            <name>More-Wrong</name>
+            <url>https://github.com/More-Wrong/</url>
+            <timezone>Europe/London</timezone>
+            <organization>Zscript Team</organization>
+        </developer>
+    </developers>
 </project>
