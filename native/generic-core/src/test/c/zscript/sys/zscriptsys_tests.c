@@ -11,5 +11,6 @@ int main() {
     #else
         printf("C Standard: Unknown\n");
     #endif
+    printf("Zscript Version: %s\n", ZSCRIPT_CORE_VERSION);
     setupZscript();
 }

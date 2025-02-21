@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(generic-core)
+project(generic-core VERSION ${ZSCRIPT_CORE_VERSION})
 
 #######
 ###### Compiler configuration
@@ -46,5 +46,6 @@ configure_package_config_file(
 
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_PACKAGE_NAME "zscript-generic-core")
-set(CPACK_PACKAGE_VERSION "1.0.0")
+set(CPACK_PACKAGE_VERSION "${ZSCRIPT_CORE_VERSION}")
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
 include(CPack)

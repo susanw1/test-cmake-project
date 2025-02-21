@@ -2,6 +2,7 @@
 #define _ZS_ZSCRIPTSYS_H
 
 #include <stdint.h>
+#include <zscript/sys/core-version.h>
 #include <zscript/tokenbuffer/tokenbuffer.h>
 
 typedef struct {
