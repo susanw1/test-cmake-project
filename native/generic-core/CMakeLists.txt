@@ -34,7 +34,7 @@ install(
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_LIST_DIR}/zscript-generic-coreConfig.cmake.in
+    ${CMAKE_CURRENT_LIST_DIR}/src/main/cmake/zscript-generic-coreConfig.cmake.in
     ${CMAKE_BINARY_DIR}/zscript-generic-coreConfig.cmake
     INSTALL_DESTINATION lib/cmake/zscript-generic-core
     )
