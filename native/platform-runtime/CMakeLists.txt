@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 project(platform-runtime
-    VERSION     ${ZSCRIPT_CORE_VERSION}
+    VERSION     1.0
 )
 
 ###### Compiler configuration
@@ -8,6 +8,26 @@ add_library(zs_compiler_flags INTERFACE)
 target_compile_features(zs_compiler_flags
     INTERFACE   c_std_11
 )
+
+
+option(USE_INSTALLED_ZSCRIPT "Use installed zscript-generic-core instead of source" OFF)
+
+if (USE_INSTALLED_ZSCRIPT)
+    find_package(zscript-generic-core REQUIRED)
+else()
+    # If not using installed version, point to source dir
+    add_subdirectory(../generic-core generic-core)
+endif()
+
+
+add_library(ZscriptPlatformRuntime INTERFACE)
+target_link_libraries(ZscriptPlatformRuntime INTERFACE ##DEBUGGING:  zscript::
+    ZscriptCore
+)
+
+##DEBUGGING: 
+get_target_property(includes ZscriptCore INTERFACE_INCLUDE_DIRECTORIES)
+message(STATUS "ZscriptCore includes: ${includes}")
 
 ###### Compile and Testing
 add_subdirectory(src/main/c)
