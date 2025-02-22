@@ -47,6 +47,8 @@
                                     <option>-DZSCRIPT_CORE_MAINTAINER=${zscript.maintainer.email}</option>
                                     <option>-DZSCRIPT_CORE_DESCRIPTION=${project.description}</option>
                                     <option>-DZSCRIPT_CORE_LICENSE=${zscript.license.name}</option>
+                                    <!-- FOR DEBUGGING LINK ISSUE -->
+                                    <option>-DUSE_INSTALLED_ZSCRIPT=OFF</option>
                                 </options>
                             </configuration>
                         </execution>
