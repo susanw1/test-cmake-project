@@ -10,7 +10,7 @@ target_compile_features(zs_compiler_flags
 )
 
 
-option(USE_INSTALLED_ZSCRIPT "Use installed zscript-generic-core instead of source" OFF)
+option(USE_INSTALLED_ZSCRIPT "Use installed zscript-generic-core instead of source" ON)
 
 if (USE_INSTALLED_ZSCRIPT)
     find_package(zscript-generic-core REQUIRED)

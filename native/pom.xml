@@ -15,6 +15,7 @@
 
     <properties>
         <version.cmake>3.30.2-b1</version.cmake>
+        <cmake.install-prefix>${user.home}/.local</cmake.install-prefix>
     </properties>
 
     <modules>
@@ -35,7 +36,6 @@
                     <executions>
                         <execution>
                             <id>cmake-generate</id>
-                            <phase>process-resources</phase>
                             <goals>
                                 <goal>generate</goal>
                             </goals>
@@ -48,13 +48,13 @@
                                     <option>-DZSCRIPT_CORE_DESCRIPTION=${project.description}</option>
                                     <option>-DZSCRIPT_CORE_LICENSE=${zscript.license.name}</option>
                                     <!-- FOR DEBUGGING LINK ISSUE -->
-                                    <option>-DUSE_INSTALLED_ZSCRIPT=OFF</option>
+                                    <option>-DUSE_INSTALLED_ZSCRIPT=ON</option>
+                                    <option>-DCMAKE_INSTALL_PREFIX=${cmake.install-prefix}</option>
                                 </options>
                             </configuration>
                         </execution>
                         <execution>
                             <id>cmake-compile</id>
-                            <phase>process-resources</phase>
                             <goals>
                                 <goal>compile</goal>
                             </goals>
