@@ -47,9 +47,12 @@
                                     <option>-DZSCRIPT_CORE_MAINTAINER=${zscript.maintainer.email}</option>
                                     <option>-DZSCRIPT_CORE_DESCRIPTION=${project.description}</option>
                                     <option>-DZSCRIPT_CORE_LICENSE=${zscript.license.name}</option>
+
+                                    <option>-DCMAKE_INSTALL_PREFIX=${cmake.install-prefix}</option>
+                                    <option>-DCMAKE_PREFIX_PATH=${cmake.install-prefix}</option>
+
                                     <!-- FOR DEBUGGING LINK ISSUE -->
                                     <option>-DUSE_INSTALLED_ZSCRIPT=ON</option>
-                                    <option>-DCMAKE_INSTALL_PREFIX=${cmake.install-prefix}</option>
                                 </options>
                             </configuration>
                         </execution>

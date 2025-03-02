@@ -21,13 +21,14 @@ endif()
 
 
 add_library(ZscriptPlatformRuntime INTERFACE)
-target_link_libraries(ZscriptPlatformRuntime INTERFACE ##DEBUGGING:  zscript::
-    ZscriptCore
+
+target_link_libraries(ZscriptPlatformRuntime
+    INTERFACE zscript::ZscriptCore
 )
 
-##DEBUGGING LINK ISSUE:
-get_target_property(includes ZscriptCore INTERFACE_INCLUDE_DIRECTORIES)
-message(STATUS "ZscriptCore includes: ${includes}")
+target_link_libraries(ZscriptPlatformRuntime INTERFACE ZscriptRuntime) # debugging
+
+
 
 ###### Compile and Testing
 add_subdirectory(src/main/c)

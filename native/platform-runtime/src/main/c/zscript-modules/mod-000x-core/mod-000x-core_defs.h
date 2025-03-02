@@ -4,10 +4,11 @@
 #define _ZS_ZSCRIPTMOD_CORE_DEFS_H
 
 #include <stdio.h>
-//#include "zscriptsys.h"
-//
-//static ZscriptSystem zscript __attribute__((unused));
-//
-//void setupZscript() {
-//    printf("hello setupZscript\n");
-//}
+
+
+
+#include "mod-000x-core.h"
+
+void module000xCore() {
+    printf("hello module000xCore defs running\n");
+}

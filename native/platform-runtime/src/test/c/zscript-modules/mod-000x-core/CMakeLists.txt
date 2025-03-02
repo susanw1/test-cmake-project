@@ -9,4 +9,4 @@ target_link_libraries(ZsZscriptMod000x
         zs_compiler_flags
 )
 
-add_test(NAME SystemTest COMMAND ZsZscriptMod000x)
+add_test(NAME Module-000x COMMAND ZsZscriptMod000x)

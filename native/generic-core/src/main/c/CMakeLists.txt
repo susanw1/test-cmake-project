@@ -5,7 +5,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/core-version.h.in
 )
 
 target_include_directories(ZscriptCore INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>  # Add the binary dir to the INTERFACE include path to pick up core-version
     $<INSTALL_INTERFACE:include>
 )

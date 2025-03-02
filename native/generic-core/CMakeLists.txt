@@ -45,6 +45,11 @@ configure_package_config_file(
     INSTALL_DESTINATION lib/cmake/zscript-generic-core
 )
 
+install(
+    FILES ${CMAKE_BINARY_DIR}/zscript-generic-coreConfig.cmake
+    DESTINATION lib/cmake/zscript-generic-core
+)
+
 # Packaging notes:
 # * From generated generic-core/target/cmake (or wherever cmake generate put you), run `cpack --config CPackConfig.cmake`
 # * Build creates TGZ and ZIP by default. Add DEB and/or RPM for others, eg:

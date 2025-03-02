@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <zscript-modules/all-modules.h>
+#include <zscript-modules/all-modules_defs.h>
 
 int main() {
     #if __STDC_VERSION__ == 201112L
@@ -11,7 +11,6 @@ int main() {
     #else
         printf("C Standard: Unknown\n");
     #endif
-//    printf("Zscript Version: %s\n", ZSCRIPT_CORE_VERSION);
-//    setupZscript();
-    printf("Hello \n");
+
+    module000xCore();
 }

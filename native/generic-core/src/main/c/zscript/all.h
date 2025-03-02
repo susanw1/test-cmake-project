@@ -1,9 +1,7 @@
-#ifndef _ZS_ZSCRIPT_H
-#define _ZS_ZSCRIPT_H
+#ifndef _ZS_ALL_H
+#define _ZS_ALL_H
 
 #include <zscript/tokenbuffer/tokenbuffer.h>
+#include <zscript/sys/zscriptsys.h>
 
-struct a {
-};
-
-#endif // _ZS_ZSCRIPT_H
+#endif // _ZS_ALL_H
