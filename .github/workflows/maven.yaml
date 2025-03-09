@@ -24,5 +24,8 @@ jobs:
         -   run: sudo apt-get install gcc-multilib g++-multilib
         -   run: gcc --version
 
+        -   run: git clone https://github.com/susanw1/cmake-maven-plugin.git cmake-maven-plugin-sw
+        -   run: cmake-maven-plugin-sw/mvnw -B install -DskipTests --file cmake-maven-plugin-sw/pom.xml
+
         -   name: Build with Maven
             run: ./mvnw -B install --file pom.xml
