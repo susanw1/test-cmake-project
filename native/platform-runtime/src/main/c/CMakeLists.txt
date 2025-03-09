@@ -6,8 +6,6 @@ target_include_directories(ZscriptRuntime INTERFACE
     $<INSTALL_INTERFACE:include>
 )
 
-get_target_property(ZR_INCLUDES ZscriptRuntime INTERFACE_INCLUDE_DIRECTORIES)
-
 target_sources(ZscriptRuntime INTERFACE
     FILE_SET    HEADERS
     BASE_DIRS   ${CMAKE_CURRENT_SOURCE_DIR}
