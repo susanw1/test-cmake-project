@@ -24,8 +24,25 @@ jobs:
         -   run: sudo apt-get install gcc-multilib g++-multilib
         -   run: gcc --version
 
-        -   run: git clone https://github.com/susanw1/cmake-maven-plugin.git cmake-maven-plugin-sw
-        -   run: cmake-maven-plugin-sw/mvnw -B install -DskipTests --file cmake-maven-plugin-sw/pom.xml
+        -   run: |
+                git clone https://github.com/susanw1/cmake-maven-plugin.git cmake-maven-plugin-sw
+                export JAVA_HOME=`which java | xargs readlink -f | xargs dirname | xargs dirname`
+                cat <<EOF > ~/.m2/toolchains.xml
+                <?xml version="1.0" encoding="UTF8"?>
+                <toolchains>
+                <toolchain>
+                <type>jdk</type>
+                <provides>
+                <version>8</version>
+                <vendor>temurin</vendor>
+                </provides>
+                <configuration>
+                <jdkHome>${JAVA_HOME}</jdkHome>
+                </configuration>
+                </toolchain>
+                </toolchains>
+                EOF
+                cmake-maven-plugin-sw/mvnw -B install -DskipTests --file cmake-maven-plugin-sw/pom.xml
 
         -   name: Build with Maven
             run: ./mvnw -B install --file pom.xml
