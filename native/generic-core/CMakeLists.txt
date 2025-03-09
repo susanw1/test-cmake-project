@@ -21,15 +21,15 @@ add_subdirectory(src/test/c)
 # Install the target (header-only library) and headers
 install(
     TARGETS     ZscriptCore
-    EXPORT      zscript-generic-coreTargets
+    EXPORT      zscript-generic-core-targets
     FILE_SET    HEADERS
     DESTINATION include
 )
 
 # Export targets and configuration file for downstream users
 install(
-    EXPORT      zscript-generic-coreTargets
-    FILE        zscript-generic-coreTargets.cmake
+    EXPORT      zscript-generic-core-targets
+    FILE        zscript-generic-core-targets.cmake
     NAMESPACE   zscript::
     DESTINATION lib/cmake/zscript-generic-core
 )
@@ -40,13 +40,13 @@ install(
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_LIST_DIR}/src/main/cmake/zscript-generic-coreConfig.cmake.in
-    ${CMAKE_BINARY_DIR}/zscript-generic-coreConfig.cmake
+    ${CMAKE_CURRENT_LIST_DIR}/src/main/cmake/zscript-generic-core-config.cmake.in
+    ${CMAKE_BINARY_DIR}/zscript-generic-core-config.cmake
     INSTALL_DESTINATION lib/cmake/zscript-generic-core
 )
 
 install(
-    FILES ${CMAKE_BINARY_DIR}/zscript-generic-coreConfig.cmake
+    FILES ${CMAKE_BINARY_DIR}/zscript-generic-core-config.cmake
     DESTINATION lib/cmake/zscript-generic-core
 )
 

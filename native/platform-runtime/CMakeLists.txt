@@ -41,15 +41,15 @@ add_subdirectory(src/test/c)
 # Install the target (header-only library) and headers
 install(
     TARGETS     ZscriptRuntime
-    EXPORT      zscript-platform-runtimeTargets
+    EXPORT      zscript-platform-runtime-targets
     FILE_SET    HEADERS
     DESTINATION include
 )
 
 # Export targets and configuration file for downstream users
 install(
-    EXPORT      zscript-platform-runtimeTargets
-    FILE        zscript-platform-runtimeTargets.cmake
+    EXPORT      zscript-platform-runtime-targets
+    FILE        zscript-platform-runtime-targets.cmake
     NAMESPACE   zscript-platform-runtime::
     DESTINATION lib/cmake/zscript-platform-runtime
 )
@@ -60,12 +60,12 @@ install(
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_LIST_DIR}/src/main/cmake/zscript-platform-runtimeConfig.cmake.in
-    ${CMAKE_BINARY_DIR}/zscript-platform-runtimeConfig.cmake
+    ${CMAKE_CURRENT_LIST_DIR}/src/main/cmake/zscript-platform-runtime-config.cmake.in
+    ${CMAKE_BINARY_DIR}/zscript-platform-runtime-config.cmake
     INSTALL_DESTINATION lib/cmake/zscript-platform-runtime
 )
 
 install(
-    FILES ${CMAKE_BINARY_DIR}/zscript-platform-runtimeConfig.cmake
+    FILES ${CMAKE_BINARY_DIR}/zscript-platform-runtime-config.cmake
     DESTINATION lib/cmake/zscript-platform-runtime
 )
