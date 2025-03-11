@@ -14,8 +14,7 @@
     <name>Native Part</name>
 
     <properties>
-        <version.cmake>3.31.5-b3-SNAPSHOT</version.cmake>
-<!--        <version.cmake>3.30.2-b1</version.cmake>-->
+        <version.cmake>3.31.6-b1</version.cmake>
         <cmake.install-prefix>${user.home}/.local</cmake.install-prefix>
     </properties>
 
@@ -33,6 +32,7 @@
                     <version>${version.cmake}</version>
                     <configuration>
                         <downloadBinaries>false</downloadBinaries>
+                        <projectDirectory>${project.build.directory}/cmake</projectDirectory>
                     </configuration>
                     <executions>
                         <execution>
@@ -42,7 +42,6 @@
                             </goals>
                             <configuration>
                                 <sourcePath>${project.basedir}</sourcePath>
-                                <targetPath>${project.build.directory}/cmake</targetPath>
                                 <options>
                                     <option>-DZSCRIPT_CORE_VERSION=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</option>
                                     <option>-DZSCRIPT_CORE_MAINTAINER=${zscript.maintainer.email}</option>
@@ -62,9 +61,6 @@
                             <goals>
                                 <goal>compile</goal>
                             </goals>
-                            <configuration>
-                                <projectDirectory>${project.build.directory}/cmake</projectDirectory>
-                            </configuration>
                         </execution>
                         <execution>
                             <id>cmake-test</id>
@@ -72,9 +68,7 @@
                                 <goal>test</goal>
                             </goals>
                             <configuration>
-                                <buildDirectory>${project.build.directory}/cmake</buildDirectory>
                                 <ignoreTestFailure>false</ignoreTestFailure>
-                                <ctestSkip>false</ctestSkip>
                                 <threadCount>2</threadCount>
                             </configuration>
                         </execution>
@@ -85,7 +79,6 @@
                             </goals>
                             <phase>install</phase>
                             <configuration>
-                                <projectDirectory>${project.build.directory}/cmake</projectDirectory>
                                 <prefix>${cmake.install-prefix}</prefix>
                                 <verbose>true</verbose>
                             </configuration>
