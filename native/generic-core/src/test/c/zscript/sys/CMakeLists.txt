@@ -5,8 +5,9 @@ target_compile_options(ZsZscriptSysTests
 )
 
 target_link_libraries(ZsZscriptSysTests
-    PRIVATE     zs_core_compiler_flags
-                ZscriptCore
+    PRIVATE
+        zs_core_compiler_flags
+        ZscriptCore
 )
 
 add_test(NAME SystemTest COMMAND ZsZscriptSysTests)

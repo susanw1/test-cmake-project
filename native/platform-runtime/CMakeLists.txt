@@ -20,15 +20,14 @@ else()
 endif()
 
 
+# Create main target for this Project
 add_library(ZscriptPlatformRuntime INTERFACE)
 
 target_link_libraries(ZscriptPlatformRuntime
-    INTERFACE zscript::ZscriptCore
+    INTERFACE
+        zscript::ZscriptCore
+        ZscriptRuntime
 )
-
-target_link_libraries(ZscriptPlatformRuntime INTERFACE ZscriptRuntime) # debugging
-
-
 
 ###### Compile and Testing
 add_subdirectory(src/main/c)
