@@ -5,8 +5,6 @@
 
 #include <stdio.h>
 
-
-
 #include "mod-000x-core.h"
 
 void module000xCore() {

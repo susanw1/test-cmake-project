@@ -2,8 +2,8 @@
 #define _ZS_ZSCRIPTSYS_H
 
 #include <stdint.h>
-#include <zscript/sys/core-version.h>
-#include <zscript/tokenbuffer/tokenbuffer.h>
+#include <t_zscript/sys/core-version.h>
+#include <t_zscript/tokenbuffer/tokenbuffer.h>
 
 typedef struct {
     tokunit *buffer;

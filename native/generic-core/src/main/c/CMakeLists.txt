@@ -1,7 +1,7 @@
 add_library(ZscriptCore INTERFACE)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/core-version.h.in
-    ${CMAKE_CURRENT_BINARY_DIR}/zscript/sys/core-version.h @ONLY
+    ${CMAKE_CURRENT_BINARY_DIR}/t_zscript/sys/core-version.h @ONLY
 )
 
 target_include_directories(ZscriptCore INTERFACE
@@ -13,9 +13,9 @@ target_include_directories(ZscriptCore INTERFACE
 target_sources(ZscriptCore INTERFACE
     FILE_SET    HEADERS
     BASE_DIRS   ${CMAKE_CURRENT_SOURCE_DIR}
-    FILES       zscript
+    FILES       t_zscript
 )
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/zscript/sys/core-version.h
-    DESTINATION include/zscript/sys
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/t_zscript/sys/core-version.h
+    DESTINATION include/t_zscript/sys
 )

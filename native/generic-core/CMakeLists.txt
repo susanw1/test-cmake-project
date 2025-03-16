@@ -21,31 +21,31 @@ add_subdirectory(src/test/c)
 # Install the target (header-only library) and headers
 install(
     TARGETS     ZscriptCore
-    EXPORT      zscript-generic-core-targets
+    EXPORT      t_zscript-generic-core-targets
     FILE_SET    HEADERS
     DESTINATION include
 )
 
 # Export targets and configuration file for downstream users
 install(
-    EXPORT      zscript-generic-core-targets
-    FILE        zscript-generic-core-targets.cmake
-    NAMESPACE   zscript::
-    DESTINATION lib/cmake/zscript-generic-core
+    EXPORT      t_zscript-generic-core-targets
+    FILE        t_zscript-generic-core-targets.cmake
+    NAMESPACE   t_zscript::
+    DESTINATION lib/cmake/t_zscript-generic-core
 )
 
 # Create the package configuration file
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_LIST_DIR}/src/main/cmake/zscript-generic-core-config.cmake.in
-    ${CMAKE_BINARY_DIR}/zscript-generic-core-config.cmake
-    INSTALL_DESTINATION lib/cmake/zscript-generic-core
+    ${CMAKE_CURRENT_LIST_DIR}/src/main/cmake/t_zscript-generic-core-config.cmake.in
+    ${CMAKE_BINARY_DIR}/t_zscript-generic-core-config.cmake
+    INSTALL_DESTINATION lib/cmake/t_zscript-generic-core
 )
 
 install(
-    FILES ${CMAKE_BINARY_DIR}/zscript-generic-core-config.cmake
-    DESTINATION lib/cmake/zscript-generic-core
+    FILES ${CMAKE_BINARY_DIR}/t_zscript-generic-core-config.cmake
+    DESTINATION lib/cmake/t_zscript-generic-core
 )
 
 ###### Packaging
@@ -56,7 +56,7 @@ install(
 # * Ensure your platform has relevant tooling (eg sudo apt install rpm).
 
 set(CPACK_GENERATOR "TGZ;ZIP")
-set(CPACK_PACKAGE_NAME "zscript-generic-core")
+set(CPACK_PACKAGE_NAME "t_zscript-generic-core")
 set(CPACK_PACKAGE_VERSION "${ZSCRIPT_CORE_VERSION}")
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
 

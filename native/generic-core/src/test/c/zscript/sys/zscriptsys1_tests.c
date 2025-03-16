@@ -1,5 +1,5 @@
-#include <zscript/sys/zscriptsys.h>
-#include <zscript/all_defs.h>
+#include <t_zscript/sys/zscriptsys.h>
+#include <t_zscript/all_defs.h>
 
 int main() {
     #if __STDC_VERSION__ == 201112L

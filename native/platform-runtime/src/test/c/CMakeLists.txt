@@ -17,4 +17,4 @@ elseif (MSVC)
     )
 endif()
 
-add_subdirectory(zscript-modules/mod-000x-core)
+add_subdirectory(t_zscript-modules/mod-000x-core)

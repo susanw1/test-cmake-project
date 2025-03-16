@@ -9,5 +9,5 @@ target_include_directories(ZscriptRuntime INTERFACE
 target_sources(ZscriptRuntime INTERFACE
     FILE_SET    HEADERS
     BASE_DIRS   ${CMAKE_CURRENT_SOURCE_DIR}
-    FILES       zscript-modules
+    FILES       t_zscript-modules
 )
