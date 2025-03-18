@@ -8,6 +8,6 @@
 
 static ZscriptSystem zscript __attribute__((unused));
 
-void setupZscript() {
+void setupZscript(void) {
     printf("hello setupZscript\n");
 }

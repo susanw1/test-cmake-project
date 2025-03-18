@@ -1,7 +1,7 @@
 #include <t_zscript/sys/zscriptsys.h>
 #include <t_zscript/all_defs.h>
 
-int main() {
+int main(void) {
     #if __STDC_VERSION__ == 201112L
         printf("C Standard: C11\n");
     #elif __STDC_VERSION__ == 199901L

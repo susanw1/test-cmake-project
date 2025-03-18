@@ -7,6 +7,6 @@
 
 #include "mod-000x-core.h"
 
-void module000xCore() {
+void module000xCore(void) {
     printf("hello module000xCore defs running\n");
 }

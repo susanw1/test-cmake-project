@@ -9,6 +9,6 @@ typedef struct {
     tokunit *buffer;
 } ZscriptSystem;
 
-void setupZscript();
+void setupZscript(void);
 
 #endif // _ZS_ZSCRIPTSYS_H
