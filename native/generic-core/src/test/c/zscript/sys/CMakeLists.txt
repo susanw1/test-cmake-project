@@ -3,7 +3,7 @@ set(link_libs
         ZscriptCore
 )
 
-# Fix the libs above, so we don't have to keep supplying same
+# Fix the libs above, so we don't have to supply them in every test
 macro(invoke_test test_name)
     invoke_test_with_libs("${test_name}" "${link_libs}")
 endmacro()
